@@ -13,6 +13,7 @@ public class UDPClient {
 			
 			InetAddress serverAddress = InetAddress.getByName("localhost");
 			
+			clientSocket.setSoTimeout(3000);
 			String stringSendData = "Hello Server!"; 
 			sendData = stringSendData.getBytes();
 			DatagramPacket sendPacket = new DatagramPacket(sendData,sendData.length,serverAddress,9090);
